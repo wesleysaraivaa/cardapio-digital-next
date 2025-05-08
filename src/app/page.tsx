@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,8 +9,9 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="min-h-screen ng-gradient-to-br from-pink-100 via-white to-purple-100">
-      <div className=" flex flex-col items-center justify-center px-4 mb-8 mt-4">
+    <main className="min-h-screen bg-gradient-to-br from-pink-100 via-white to-purple-100">
+      <Header />
+      <div className="pt-24 flex flex-col items-center justify-center px-4 mb-8 mt-4">
         <h1 className="text-3xl md:text-4xl font-extrabold text-pink-600 drop-shadow mb-2 text-center">
           Menu de Sobremesas
         </h1>
