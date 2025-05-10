@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import CategoryListWrapper from "@/components/CategoryListWrapper";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -20,6 +21,7 @@ export default function Home() {
           muito carinho.
         </p>
       </div>
+      <CategoryListWrapper />
     </main>
   );
 }
