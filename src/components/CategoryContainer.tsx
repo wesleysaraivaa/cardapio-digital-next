@@ -5,11 +5,15 @@ import { supabase } from "@/lib/supabase";
 import { Category } from "@/types/category";
 import CategoryList from "@/components/CategoryList";
 
-const CategoryContainer = () => {
+interface CategoryContainerProps {
+  selectedCategory: string | null;
+  onSelectCategory: (categoryId: string | null) => void;
+}
+
+const CategoryContainer = ({ selectedCategory, onSelectCategory }: CategoryContainerProps) => {
   const [categories, setCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   const fetchCategories = useCallback(async () => {
     try {
@@ -19,7 +23,7 @@ const CategoryContainer = () => {
       const { data, error } = await supabase
         .from("categories")
         .select("*")
-        .order("name");
+        .order("sort_order");
 
       if (error) {
         throw error;
@@ -60,7 +64,7 @@ const CategoryContainer = () => {
       <CategoryList
         categories={categories}
         selectedCategory={selectedCategory}
-        onSelectCategory={setSelectedCategory}
+        onSelectCategory={onSelectCategory}
       />
     </div>
   );
