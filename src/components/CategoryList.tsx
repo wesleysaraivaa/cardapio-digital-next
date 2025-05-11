@@ -1,7 +1,7 @@
 "use client";
 
-import React from "react";
-import { Category } from "@/lib/types";
+import React, { memo } from "react";
+import { CategoryListProps } from "@/types/category";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
@@ -10,13 +10,7 @@ import { IconName } from "@fortawesome/fontawesome-svg-core";
 // Adicionar todos os ícones solid à biblioteca
 library.add(fas);
 
-interface CategoryListProps {
-  categories?: Category[];
-  selectedCategory: string | null;
-  onSelectCategory: (categoryId: string | null) => void;
-}
-
-const CategoryList = ({
+const CategoryList = memo(({
   categories = [],
   selectedCategory,
   onSelectCategory,
@@ -24,8 +18,7 @@ const CategoryList = ({
   // Função para converter o nome do ícone para o formato correto
   const getIconName = (iconName: string): IconName | undefined => {
     try {
-      // Remover o prefixo "fa-" se existir
-      const cleanName = iconName.replace(/^fa-/, '');
+      const cleanName = iconName.replace(/^fa-/, "");
       return cleanName as IconName;
     } catch (error) {
       console.error("Erro ao converter nome do ícone:", error);
@@ -63,14 +56,17 @@ const CategoryList = ({
               <FontAwesomeIcon 
                 icon={["fas", iconName]} 
                 className="w-4 h-4" 
+                aria-hidden="true"
               />
             )}
-            {category.name}
+            <span>{category.name}</span>
           </button>
         );
       })}
     </div>
   );
-};
+});
+
+CategoryList.displayName = "CategoryList";
 
 export default CategoryList;

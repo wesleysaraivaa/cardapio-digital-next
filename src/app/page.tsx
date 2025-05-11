@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
-import CategoryListWrapper from "@/components/CategoryListWrapper";
+
 import { Metadata } from "next";
+import CategoryContainer from "@/components/CategoryContainer";
 
 export const metadata: Metadata = {
   title: "Menu Sobremesas - As mais saborosas sobremesas estão aqui!",
@@ -21,7 +22,7 @@ export default function Home() {
           muito carinho.
         </p>
       </div>
-      <CategoryListWrapper />
+      <CategoryContainer />
     </main>
   );
 }
