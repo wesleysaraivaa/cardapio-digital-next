@@ -4,6 +4,7 @@ import { useState } from "react";
 import Header from "@/components/Header";
 import CategoryContainer from "@/components/CategoryContainer";
 import ProductContainer from "@/components/ProductContainer";
+import Footer from "./Footer";
 
 export default function HomePage() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -16,8 +17,8 @@ export default function HomePage() {
           Menu de Sobremesas
         </h1>
         <p className="text-gray-500 text-lg text-center max-w-xl mb-2">
-          Experimente nossas delícias, preparadas com ingredientes frescos e
-          muito carinho.
+          Experimente nossos deliciosos produtos, feitos com ingredientes
+          selecionados e preparados com muito carinho.
         </p>
       </div>
       <CategoryContainer
@@ -25,6 +26,7 @@ export default function HomePage() {
         onSelectCategory={setSelectedCategory}
       />
       <ProductContainer selectedCategory={selectedCategory} />
+      <Footer />
     </main>
   );
 }

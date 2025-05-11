@@ -1,6 +1,6 @@
 export const BUSINESS_HOURS = {
   openHour: 8,
-  closeHour: 24,
+  closeHour: 23,
 };
 
 export const isBusinessOpen = (): boolean => {
