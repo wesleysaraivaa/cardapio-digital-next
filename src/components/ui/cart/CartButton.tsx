@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useCart } from "@/app/hooks/useCart";
+import { useCart } from "@/hooks/useCart";
 import Cart from "@/components/containers/Cart";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";

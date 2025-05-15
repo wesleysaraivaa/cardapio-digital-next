@@ -1,6 +1,7 @@
 import type { Product } from "./product";
 
 export type OrderType = "RETIRADA" | "ENTREGA";
+
 export type PaymentMethod =
   | "CARTAO_CREDITO"
   | "CARTAO_DEBITO"
@@ -24,6 +25,8 @@ export interface CustomerInfo {
   changeAmount?: number;
 }
 
+export type OrderStatus = "PENDENTE" | "CONFIRMADO" | "ENTREGUE" | "CANCELADO";
+
 export interface Order {
   id: string;
   type: OrderType;
@@ -31,7 +34,7 @@ export interface Order {
   customerInfo: CustomerInfo;
   items: CartItem[];
   totalPrice: number;
-  status: "PENDENTE" | "CONFIRMADO" | "ENTREGUE" | "CANCELADO";
+  status: OrderStatus;
   createdAt: Date;
   updatedAt: Date;
 }

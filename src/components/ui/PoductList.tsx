@@ -6,7 +6,7 @@ import { ProductListProps, Product } from "@/types/product";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import { toast } from "react-toastify";
-import { useCart } from "@/app/hooks/useCart";
+import { useCart } from "@/hooks/useCart";
 
 const ProductList = memo(({ products = [] }: ProductListProps) => {
   const { addToCart } = useCart();

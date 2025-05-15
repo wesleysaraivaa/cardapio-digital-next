@@ -3,7 +3,6 @@ import { persist } from "zustand/middleware";
 import { CartStore, CartItem } from "@/types/cart";
 import { Product } from "@/types/product";
 
-// Estado inicial
 const initialState = {
   items: [] as CartItem[],
   isOpen: false,

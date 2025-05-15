@@ -1,7 +1,7 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
-import type { CartItem } from '@/types/cart'; // Importar o tipo CartItem
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
+import type { CartItem } from "@/types/cart"; // Importar o tipo CartItem
 
 type CartItemCardProps = {
   item: CartItem;
@@ -46,8 +46,8 @@ const CartItemCard: React.FC<CartItemCardProps> = ({
           </div>
           <div className="mt-2">
             <textarea
-              placeholder="Observação (ex: Sem cebola)"
-              value={item.notes || ''}
+              placeholder="Observação"
+              value={item.notes || ""}
               onChange={(e) => onUpdateNotes(item.id, e.target.value)}
               className="w-full p-2 text-sm border border-gray-200 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-pink-500 outline-none bg-white/50"
               rows={2}
@@ -82,4 +82,4 @@ const CartItemCard: React.FC<CartItemCardProps> = ({
   );
 };
 
-export default CartItemCard; 
+export default CartItemCard;

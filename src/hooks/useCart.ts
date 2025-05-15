@@ -1,6 +1,6 @@
 "use client";
 
-import { useCartStore } from "@/app/store/cartStore";
+import { useCartStore } from "@/store/cartStore";
 import type { Product } from "@/types/product";
 
 export function useCart() {
