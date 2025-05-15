@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, useCallback } from "react";
 import { supabase } from "@/lib/supabase";
-import ProductList from "@/components/PoductList";
+import ProductList from "@/components/ui/PoductList";
 import { Product } from "@/types/product";
 
 interface ProductContainerProps {

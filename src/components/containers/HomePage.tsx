@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import Header from "@/components/Header";
-import CategoryContainer from "@/components/CategoryContainer";
-import ProductContainer from "@/components/ProductContainer";
-import Footer from "./Footer";
+import Header from "@/components/ui/Header";
+import CategoryContainer from "@/components/containers/CategoryContainer";
+import ProductContainer from "@/components/containers/ProductContainer";
+import Footer from "../ui/Footer";
 
 export default function HomePage() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);

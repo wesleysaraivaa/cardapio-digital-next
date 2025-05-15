@@ -6,9 +6,13 @@ import { ProductListProps, Product } from "@/types/product";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import { toast } from "react-toastify";
+import { useCart } from "@/app/hooks/useCart";
 
 const ProductList = memo(({ products = [] }: ProductListProps) => {
+  const { addToCart } = useCart();
+
   const handleAddToCart = (product: Product) => {
+    addToCart(product);
     toast.success(`${product.name} adicionado ao carrinho!`);
   };
 

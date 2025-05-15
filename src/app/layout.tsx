@@ -8,6 +8,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
+import CartButtonWrapper from "@/components/CartButtonWrapper";
+
 // Evitar que o FontAwesome adicione CSS automaticamente
 config.autoAddCss = false;
 
@@ -30,6 +32,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         {children}
+        <CartButtonWrapper />
         <ToastContainer
           position="top-right"
           autoClose={3000}
