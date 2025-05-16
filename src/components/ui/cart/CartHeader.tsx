@@ -1,13 +1,13 @@
-import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 type CartHeaderProps = {
   onClose: () => void;
-  title?: string; // Título opcional para flexibilidade
+  title?: string;
 };
 
-const CartHeader: React.FC<CartHeaderProps> = ({ onClose, title = "Seu Pedido" }) => {
+const CartHeader = ({ onClose, title = "Seu Pedido" }: CartHeaderProps) => {
   return (
     <div className="flex justify-between items-center mb-6">
       <h2 className="text-2xl font-bold text-gray-800">{title}</h2>
@@ -22,4 +22,4 @@ const CartHeader: React.FC<CartHeaderProps> = ({ onClose, title = "Seu Pedido" }
   );
 };
 
-export default CartHeader; 
+export default CartHeader;

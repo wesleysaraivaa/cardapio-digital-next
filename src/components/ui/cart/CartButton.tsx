@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useCart } from "@/hooks/useCart";
 import Cart from "@/components/containers/Cart";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
@@ -21,7 +22,7 @@ export default function CartButton() {
       >
         <FontAwesomeIcon icon={faShoppingCart} className="w-6 h-6" />
         {totalItems > 0 && (
-          <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center shadow-md group-hover:bg-red-600 transition-colors">
+          <span className="absolute -top-2 -right-2 bg-green-500 text-white text-xs font-bold rounded-full w-6 h-6 flex items-center justify-center shadow-md group-hover:bg-red-600 transition-colors">
             {totalItems}
           </span>
         )}

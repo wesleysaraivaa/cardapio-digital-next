@@ -1,6 +1,6 @@
-import React from 'react';
-import type { CartItem } from '@/types/cart';
-import CartItemCard from './CartItemCard'; // Importar o CartItemCard
+import React from "react";
+import type { CartItem } from "@/types/cart";
+import CartItemCard from "./CartItemCard";
 
 type CartItemsListProps = {
   items: CartItem[];
@@ -9,17 +9,17 @@ type CartItemsListProps = {
   onUpdateNotes: (itemId: string, newNotes: string) => void;
 };
 
-const CartItemsList: React.FC<CartItemsListProps> = ({
+const CartItemsList = ({
   items,
   onUpdateQuantity,
   onRemoveItem,
   onUpdateNotes,
-}) => {
+}: CartItemsListProps) => {
   return (
     <div className="space-y-3 mb-6">
       {items.map((item) => (
         <CartItemCard
-          key={item.id} // A key deve estar aqui no elemento mais externo do map
+          key={item.id}
           item={item}
           onUpdateQuantity={onUpdateQuantity}
           onRemoveItem={onRemoveItem}
@@ -30,4 +30,4 @@ const CartItemsList: React.FC<CartItemsListProps> = ({
   );
 };
 
-export default CartItemsList; 
+export default CartItemsList;

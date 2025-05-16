@@ -1,7 +1,9 @@
 import React from "react";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
-import type { CartItem } from "@/types/cart"; // Importar o tipo CartItem
+
+import type { CartItem } from "@/types/cart";
 
 type CartItemCardProps = {
   item: CartItem;
@@ -10,12 +12,12 @@ type CartItemCardProps = {
   onUpdateNotes: (itemId: string, newNotes: string) => void;
 };
 
-const CartItemCard: React.FC<CartItemCardProps> = ({
+const CartItemCard = ({
   item,
   onUpdateQuantity,
   onRemoveItem,
   onUpdateNotes,
-}) => {
+}: CartItemCardProps) => {
   const handleQuantityIncrease = () => {
     onUpdateQuantity(item.id, item.quantity + 1);
   };

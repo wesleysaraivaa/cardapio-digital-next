@@ -4,6 +4,7 @@ import {
   faCreditCard,
   faQrcode,
 } from "@fortawesome/free-solid-svg-icons";
+
 import type { PaymentMethod } from "@/types/cart";
 
 interface PaymentMethodSelectorProps {
@@ -11,10 +12,10 @@ interface PaymentMethodSelectorProps {
   onMethodSelect: (method: PaymentMethod) => void;
 }
 
-export const PaymentMethodSelector: React.FC<PaymentMethodSelectorProps> = ({
+export const PaymentMethodSelector = ({
   selectedMethod,
   onMethodSelect,
-}) => {
+}: PaymentMethodSelectorProps) => {
   return (
     <div className="grid grid-cols-2 gap-3">
       <button

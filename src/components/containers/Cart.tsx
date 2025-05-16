@@ -4,11 +4,13 @@ import React from "react";
 import { useCartStore } from "@/store/cartStore";
 import { getBusinessStatus } from "@/lib/businessHours";
 import { useOrderSubmission } from "@/hooks/useOrderSubmission";
+
 import CartHeader from "@/components/ui/cart/CartHeader";
 import BusinessStatusAlert from "@/components/ui/cart/BusinessStatusAlert";
 import EmptyCartMessage from "@/components/ui/cart/EmptyCartMessage";
 import CartItemsList from "@/components/ui/cart/CartItemsList";
 import OrderForm, { type OrderFormData } from "@/components/ui/cart/OrderForm";
+
 import type { CartItem } from "@/types/cart";
 
 type CartProps = {
@@ -18,12 +20,15 @@ type CartProps = {
 export default function Cart({ onClose }: CartProps) {
   const { items, updateItemQuantity, removeItem, updateItemNotes, clearCart } =
     useCartStore();
+
   const businessStatus = getBusinessStatus();
   const isBusinessOpen = businessStatus.isOpen;
+
   const total = items.reduce(
     (acc: number, item: CartItem) => acc + item.price * item.quantity,
     0
   );
+
   const { submitOrder, isSubmitting } = useOrderSubmission(
     items,
     total,

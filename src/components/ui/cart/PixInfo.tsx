@@ -5,7 +5,7 @@ interface PixInfoProps {
   pixKey: string;
 }
 
-export const PixInfo: React.FC<PixInfoProps> = ({ pixKey }) => {
+export const PixInfo = ({ pixKey }: PixInfoProps) => {
   return (
     <div className="mb-6 p-4 bg-gray-50 rounded-xl">
       <p className="text-sm text-gray-600 mb-3 font-medium">Chave Pix:</p>

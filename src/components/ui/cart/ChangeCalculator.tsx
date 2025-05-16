@@ -12,7 +12,7 @@ interface ChangeCalculatorProps {
   onDecrement: () => void;
 }
 
-export const ChangeCalculator: React.FC<ChangeCalculatorProps> = ({
+export const ChangeCalculator = ({
   isChangeNeeded,
   changeAmount,
   total,
@@ -21,7 +21,7 @@ export const ChangeCalculator: React.FC<ChangeCalculatorProps> = ({
   onChangeAmountBlur,
   onIncrement,
   onDecrement,
-}) => {
+}: ChangeCalculatorProps) => {
   return (
     <div className="mb-6">
       <div className="flex justify-between items-center mb-4">

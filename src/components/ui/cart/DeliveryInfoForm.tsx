@@ -9,13 +9,13 @@ interface DeliveryInfoFormProps {
   isDelivery: boolean;
 }
 
-export const DeliveryInfoForm: React.FC<DeliveryInfoFormProps> = ({
+export const DeliveryInfoForm = ({
   phone,
   address,
   onPhoneChange,
   onAddressChange,
   isDelivery,
-}) => {
+}: DeliveryInfoFormProps) => {
   if (!isDelivery) return null;
 
   return (
